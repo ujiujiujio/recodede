@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>感情ログ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- ドットフォント -->
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div id="loadingScreen" hidden>
+    <div class="loading-card" role="status">
+        <span class="loading-heart" aria-hidden="true">♥</span>
+        <p>LOADING...</p>
+        <div class="loading-bar" aria-hidden="true"></div>
+    </div>
+</div>
+
+
+
+<header>
+
+<h1>感情ログ</h1>
+
+<p>今日の感情を記録しよう。</p>
+
+<div class="status-bar">
+    <time id="clock"></time>
+    <span id="weather" role="status">福岡の天気を取得中…</span>
+</div>
+
+</header>
+
+
+<!-- カレンダー -->
+
+<section class="calendar-section">
+
+<div class="month-controls">
+    <button type="button" id="previousMonth" aria-label="前の月">◀</button>
+    <h2 id="calendarMonth" aria-live="polite"></h2>
+    <button type="button" id="nextMonth" aria-label="次の月">▶</button>
+</div>
+<button type="button" id="currentMonth">今月へ</button>
+
+<div id="calendar" class="calendar">
+
+
+
+</div>
+
+</section>
+
+
+
+<section class="emotion-window">
+
+<h2>SELECT EMOTION</h2>
+
+<div class="emotion-list">
+
+
+
+<img src="images/うれしい.gif"
+data-emotion="happy"
+alt="うれしい">
+
+<img src="images/かなしい.gif"
+data-emotion="sad"
+alt="かなしい">
+
+<img src="images/おこり.gif"
+data-emotion="angry"
+alt="おこり">
+
+<img src="images/もやもや.gif"
+data-emotion="tired"
+alt="もやもや">
+
+<img src="images/わくわく.gif"
+data-emotion="excited"
+alt="わくわく">
+
+<img src="images/ふあん.gif"
+data-emotion="anxious"
+alt="ふあん">
+
+<img src="images/びっくり.gif"
+data-emotion="surprised"
+alt="びっくり">
+
+<img src="images/__pixelart.gif"
+data-emotion="neutral"
+alt="ときめき">
+
+</div>
+
+<p id="message">
+
+日にちを選んで感情を記録してください。
+
+</p>
+
+</section>
+
+
+
+<section class="memo-window">
+
+<h2>MEMO</h2>
+
+<textarea
+
+id="memo"
+
+maxlength="50"
+
+placeholder="今日あったことをひとこと書こう！"
+
+></textarea>
+
+<div class="memo-footer">
+
+<span id="charCount">
+
+0 / 50
+
+</span>
+
+<button id="saveButton">
+
+SAVE
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<div id="savePopup">
+
+SAVE COMPLETE!
+
+</div>
+
+
+
+<section class="history-window">
+
+<h2>EMOTION HISTORY</h2>
+
+<div class="history-wrapper">
+
+<div id="historyTrack">
+
+<!-- JavaScriptでカード生成 -->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>
+
+
+
+</p>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
